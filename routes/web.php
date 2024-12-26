@@ -19,29 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-//Examples of view
-Route::get('home/{name}',function($name){
-    return view('home', ['userName'=>$name]);
-});
-
-
-//example of redirection
-route::redirect('/about', '/');
-
-
-
-//example of another way of render view
-Route::view('/customer', 'home');
-
-
-//example of roting with controllers
 Route::get('user/{id}', [User::class, 'getUser']);
-
-
-
-//example of blade 
-Route::get('user', function () {
-    $users = ['Hamza', 'Jawad', 'burhan'];
-    return view('user', ['users' => $users]);
-});
