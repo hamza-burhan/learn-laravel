@@ -13,8 +13,27 @@ use App\Http\Controllers\UserController as User;
 |
 */
 
+
+//Example of welcome page
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Examples of view
+Route::get('home/{name}',function($name){
+    return view('home', ['userName'=>$name]);
+});
+
+
+//example of redirection
+route::redirect('/about', '/');
+
+
+
+//example of another way of render view
+Route::view('/customer', 'home');
+
+
+//example of roting with controllers
 Route::get('user/{id}', [User::class, 'getUser']);
