@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('user', [User::class, 'getUser']);
+
 
 
 // Example of grouped routes
