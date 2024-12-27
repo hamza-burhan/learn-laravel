@@ -37,3 +37,11 @@ Route::view('/customer', 'home');
 
 //example of roting with controllers
 Route::get('user/{id}', [User::class, 'getUser']);
+
+
+
+//example of blade 
+Route::get('user', function () {
+    $users = ['Hamza', 'Jawad', 'burhan'];
+    return view('user', ['users' => $users]);
+});
