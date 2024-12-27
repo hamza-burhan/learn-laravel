@@ -45,6 +45,11 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+        'check' => [
+            \App\Http\Middleware\Agecheck::class,
+            \App\Http\Middleware\Countrycheck::class,
+        ]
     ];
 
     /**

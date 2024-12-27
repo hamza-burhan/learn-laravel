@@ -23,18 +23,5 @@ Route::get('user', [User::class, 'getUser']);
 
 
 
-// Example of grouped routes
-// Route::prefix('/api')->group(function () {
-//     Route::get('/view', function () {
-//         return view('welcome');
-//     });
-//     Route::get('/user', [User::class, 'getUser']);
-// });
-
-
-// Example of group route with controller
-// Route::controller(User::class)->group(function (){
-//     Route::get('/user', 'getUser');
-//     Route::get('/setuser/{id}', 'setuser');
-// });
-
+//Example of group middleware
+Route::get('about', [User::class, 'getUser'])->middleware('check');
