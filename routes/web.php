@@ -20,8 +20,3 @@ Route::get('/', function () {
 });
 
 Route::get('user', [User::class, 'getUser']);
-
-
-
-//Example of group middleware
-Route::get('about', [User::class, 'getUser'])->middleware('check');
