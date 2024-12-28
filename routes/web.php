@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user', [User::class, 'getUser']);
+Route::get('api/user', [User::class, 'getUser']);
+Route::post('api/user', [User::class, 'setUser']);
+Route::post('api/login', [User::class, 'authenticate']);
+
+
