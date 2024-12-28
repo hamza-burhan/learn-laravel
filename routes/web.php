@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user/{id}', [User::class, 'getUser']);
+Route::get('user', [User::class, 'getUser']);
