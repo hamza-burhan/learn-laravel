@@ -40,4 +40,10 @@ class UserController extends Controller
             return response()->json(["message"=> "Not authorized","user"=> null],400);
         }
     }
+
+    public function test(Request $request){
+        $request->session()->put("s_id","123");
+        $s_id = session("s_id");
+        return response()->json(["message"=> "success","test"=> $s_id], 200);;
+    }
 }

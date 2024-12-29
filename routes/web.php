@@ -18,17 +18,12 @@ Route::get('/', function () {
 });
 
 
-// Route::prefix('api')->group(function () {
-//     Route::get('user', [User::class, 'getUser']);
-//     Route::post('user', [User::class, 'setUser']);
-//     Route::post('login', [User::class, 'authenticate']);
-// });
+Route::prefix('api')->group(function () {
+    Route::get('user', [User::class, 'getUser']);
+    Route::post('user', [User::class, 'setUser']);
+    Route::post('login', [User::class, 'authenticate']);
+    Route::get('test', [User::class, 'test']);
+
+});
 
 
-
-
-
-
-//example of any and match routes
-// Route::any('api/user', [User::class,'getUser']);
-// Route::match(['get','post'],'api/user', [User::class,'getUser']);
