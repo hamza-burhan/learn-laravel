@@ -24,6 +24,10 @@ Route::prefix('api')->group(function () {
     Route::post('login', [User::class, 'authenticate']);
     Route::get('test', [User::class, 'test']);
 
+    //example of file upload
+    Route::post('test', [User::class, 'test']);
+
+
 });
 
 

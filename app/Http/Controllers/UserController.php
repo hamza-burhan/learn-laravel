@@ -42,8 +42,19 @@ class UserController extends Controller
     }
 
     public function test(Request $request){
-        $request->session()->put("s_id","123");
-        $s_id = session("s_id");
-        return response()->json(["message"=> "success","test"=> $s_id], 200);;
+        //example of file upload
+        $request->validate([
+            "file" => "required|file|mimes:jpg,jpeg,png|max: 2048"
+        ]);
+
+        if($request->hasFile("file") && $request->file("file")->isValid()){
+            $file = $request->file('file');
+            $path = $file->store('upload','public');
+            return response()->json([
+                'message' => 'File uploaded successfully',
+                'file_url' => asset('storage/' . $path),  
+            ], 200);
+        }
+        return response()->json(["message"=> "not file","file"=> null],400);
     }
 }
